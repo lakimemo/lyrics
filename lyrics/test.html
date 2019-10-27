@@ -1,0 +1,21 @@
+<!--<html><head></head><body>-->
+<script type="text/javascript" src="../../../js/json2.js"></script>
+<script type="text/javascript">
+function loadFile2(fileName){
+   httpObj = new XMLHttpRequest();
+   httpObj.open('GET',fileName,true);
+   httpObj.send(null);
+   httpObj.onreadystatechange = function(){
+      if( ( httpObj.readyState == 4) && (httpObj.status == 200)){
+         document.getElementById("text2").value=httpObj.responseText;
+         var data= JSON.parse(httpObj.responseText);
+         alert(JSON.stringify(data,null,'   '));
+         document.getElementById("text2").value="";
+         }
+      }
+   }
+</script>
+<input type="text" id="text2" style="width:30em"/><br>
+<input type="button" value="jsonƒtƒ@ƒCƒ‹“Ç‚Ýž‚Ý"
+       onClick="loadFile2('../../../Desktop/lyrics/sample.json')" />
+<!--</body></html>-->
